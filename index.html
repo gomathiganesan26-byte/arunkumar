@@ -1,0 +1,495 @@
+# Query: index.html
+# ContextLines: 1
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ஒரு சிறிய Surprise ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .screen {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            padding: 25px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        h1 {
+            font-size: 35px;
+            line-height: 1.4;
+        }
+
+        .question {
+            font-size: 24px;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        .poem {
+            font-size: 23px;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        button {
+            border: none;
+            background: white;
+            color: #ff4f81;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .photo {
+            width: 85%;
+            max-width: 420px;
+            max-height: 55vh;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+        }
+
+        video {
+            width: 90%;
+            max-width: 700px;
+            max-height: 65vh;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+        }
+
+        .heart {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .birthday {
+            font-size: 45px;
+            animation: zoom 1.3s infinite alternate;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+        }
+
+        .fade {
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            animation: fall 4s linear forwards;
+            z-index: 100;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+            }
+        }
+
+        .small {
+            font-size: 17px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- ================= PAGE 1 ================= -->
+
+<div class="screen active fade" id="screen1">
+
+    <div class="heart">🎁</div>
+
+    <h1>
+        உனக்காக ஒரு Surprise வைத்திருக்கேன்... ❤️
+    </h1>
+
+    <p class="question">
+        பாக்க ஆசையா இல்லையா? 👀
+    </p>
+
+    <div>
+        <button onclick="nextPage()">ஆமா ❤️</button>
+        <button onclick="nextPage()">இல்ல 😏</button>
+    </div>
+
+</div>
+
+
+<!-- ================= PAGE 2 ================= -->
+
+<div class="screen fade" id="screen2">
+
+    <div class="heart">🥰</div>
+
+    <p class="question">
+        ரொம்ப excited-ஆ இருக்கியா? ❤️
+    </p>
+
+    <div>
+        <button onclick="nextPage()">ஆமா 😍</button>
+        <button onclick="nextPage()">இல்ல 😌</button>
+    </div>
+
+</div>
+
+
+<!-- ================= PAGE 3 ================= -->
+
+<div class="screen fade" id="screen3">
+
+    <div class="heart">❤️</div>
+
+    <p class="poem">
+        உன் அளவுக்கு என்னால<br>
+        கவிதை எழுத முடியலனாலும்...<br><br>
+
+        என்னால முடிஞ்சது<br><br>
+
+        உன் கையைப் பிடித்த நாள்முதல், என் உலகம் அழகானது;
+உன் காதல் இருக்கும் வரை, என் இதயம் உன்னுடையது! ❤️<br>
+    </p>
+
+    <button onclick="nextPage()">
+        அடுத்து போகலாம் ❤️
+    </button>
+
+</div>
+
+
+<!-- ================= PAGE 4 ================= -->
+
+<div class="screen fade" id="screen4">
+
+    <img src="photo1.jpg" class="photo">
+
+    <p class="poem">
+        உன்னைப் பார்த்தது ஒரு அழகான தொடக்கம்…<br>
+        என் காதலின் முடிவில்லா பயணம் நீதான். ❤️<br>
+    </p>
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+<!-- ================= PAGE 5 ================= -->
+
+
+<div class="screen fade" id="screen5">
+
+    <img src="photo7.jpeg" class="photo">
+
+    <p class="poem">
+        இந்த photo-வை என் birthday-க்கு WhatsApp status-ஆ வைத்து, நம் காதலை எல்லோருக்கும் தெரியப்படுத்தின! ❤️🎂... ❤️
+    </p>
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+
+<!-- ================= PAGE 6 ================= -->
+
+
+<div class="screen fade" id="screen6">
+
+    <img src="mobile.jpeg" class="photo">
+
+    <p class="poem">
+       இந்த photo-தான் உன்னோட new mobile-ல எடுத்த first photo. 📸❤️... ❤️
+    </p>
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+<!-- ================= PAGE 7 ================= -->
+
+<div class="screen fade" id="screen7">
+
+    <img src="cinema.jpeg" class="photo">
+
+    <p class="poem">
+        
+        இதுதான் நாம கடைசியாக lovers ah பார்த்த படம். 🎬❤️
+    </p>
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+
+<!-- ================= PAGE 8 ================= -->
+
+<div class="screen fade" id="screen8">
+
+    <img src="photo2.jpg" class="photo">
+
+    <p class="poem">
+       பல தடைகளையும் தாண்டி,<br>
+        நம் காதல் கல்யாணத்தில் முடிந்தது… ❤️
+    </p>
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+<!-- ================= PAGE 9 ================= -->
+
+<div class="screen fade" id="screen9">
+
+    <img src="valaiyakappu.jpeg" class="photo">
+
+    <p class="poem">
+        நாம் இருவரும் மூவரான அழகிய தருணம். ❤️👨‍👩‍👧
+    </p>
+
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+<!-- ================= PAGE 10 ================= -->
+
+
+<div class="screen fade" id="screen10">
+
+    <img src="photo3.jpg" class="photo">
+
+    <p class="poem">
+        நீ என் கையைப் பிடித்த நொடியிலிருந்து,
+என் இதயம் உன்னுடையதாகிவிட்டது.
+என் ஒவ்வொரு நாளின் மகிழ்ச்சியும்,
+உன் காதலில்தான் இருக்கிறது. ❤️
+    </p>
+
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+<!-- ================= PAGE 11 ================= -->
+
+<div class="screen fade" id="screen11">
+
+    <img src="Hanyaa.jpeg" class="photo">
+
+    <p class="poem">
+        நம் காதல் கதையின் அழகான அடுத்த அத்தியாயம்…
+நம் வாழ்க்கைக்குள் வந்த குட்டி தேவதை.❤️
+    </p>
+
+    <h2>
+        ஹன்யா ❤️
+    </h2>
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+
+<!-- ================= PAGE 12 ================= -->
+
+<div class="screen fade" id="screen12">
+
+    <img src="photo5.jpg" class="photo">
+
+    <p class="poem">
+        வாழ்வை இன்னும் அழகாக்க,
+நம் வாழ்க்கையில் மலர்ந்த அடுத்த குட்டி தேவதை❤️
+    </p>
+
+    <h2>
+        ஷாக்ஷி 💕
+    </h2>
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+
+<!-- ================= PAGE 13 ================= -->
+
+<div class="screen fade" id="screen13">
+
+    <img src="photo6.jpg" class="photo">
+
+    <p class="poem">
+        இவ்வளவு அழகான வாழ்க்கை கிடைச்ச பிறகு,<br>
+        இந்த உலகமே எனக்கு போதும்... ❤️
+    </p>
+
+    <button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+
+<!-- ================= PAGE 14 ================= -->
+
+<div class="screen fade" id="screen14">
+
+    <h1>
+        நம்ம சின்ன சின்ன Memories<br>
+        பாக்குறியா? ❤️
+    </h1>
+
+    <video controls>
+        <source src="memories1.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+
+    <button onclick="nextPage()">
+        இன்னும் ஒன்று இருக்கு ❤️
+    </button>
+
+</div>
+
+
+<!-- ================= FINAL PAGE ================= -->
+
+<div class="screen fade" id="screen15">
+
+    <div class="heart">
+        ❤️ 🎂 ❤️
+    </div>
+
+    <h1 class="birthday">
+        இனிய பிறந்தநாள் வாழ்த்துக்கள்! 🎉
+    </h1>
+
+    <h2>
+        என் காதல் கணவனே ❤️ ❤️
+    </h2>
+
+    <p class="poem">
+எப்போதும் சிரித்துக் கொண்டே இரு;
+என்பது என் வாழ்த்தாக இருக்கட்டும்!
+எப்போதும் சிரித்தபடி
+பார்த்துக் கொள்கிறேன்;
+என்பது என் பரிசாக இருக்கட்டும்!
+Love You So Much Dear.
+
+    </p>
+
+    <div class="heart">
+        🥰 ❤️ 🎈 ❤️ 🥰
+    </div>
+
+</div>
+
+
+<script>
+
+    let currentPage = 1;
+
+    function nextPage() {
+
+        document
+            .getElementById("screen" + currentPage)
+            .classList.remove("active");
+
+        currentPage++;
+
+        const next = document.getElementById("screen" + currentPage);
+
+        if (next) {
+
+            next.classList.add("active");
+
+            // Re-trigger animation
+            next.classList.remove("fade");
+
+            void next.offsetWidth;
+
+            next.classList.add("fade");
+        }
+
+        // Final page
+        if (currentPage === 10) {
+            createConfetti();
+        }
+    }
+
+
+    function createConfetti() {
+
+        for (let i = 0; i < 180; i++) {
+
+            const confetti = document.createElement("div");
+
+            confetti.className = "confetti";
+
+            confetti.style.left =
+                Math.random() * 100 + "vw";
+
+            confetti.style.animationDelay =
+                Math.random() * 3 + "s";
+
+            confetti.style.backgroundColor =
+                "hsl(" +
+                Math.random() * 360 +
+                ", 100%, 60%)";
+
+            document.body.appendChild(confetti);
+        }
+    }
+
+</script>
+
+</body>
+</html>
